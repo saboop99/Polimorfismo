@@ -60,8 +60,10 @@ namespace Polimorfismo
                     Console.Write("Taxa de alfândega: ");
                     //conversão do que foi digitado para double e armazenamento do valor na variável taxa
                     double taxa = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-                    //adição de uma nova lista com as variavéis nome, preço e taxa
-                    list.Add(new PI(nome, preço, taxa));
+                    //operação cujo resultado é adicionado na variavel valorTotalcomTaxa
+                    double valorTotalcomTaxa = preço + (preço * taxa / 100);
+                    //adição de uma nova lista com as variavéis nome, preço, taxa e o valorTotalcomTaxa
+                    list.Add(new PI(nome, preço, taxa, valorTotalcomTaxa));
                 }
 
                 //pular uma linha
@@ -76,6 +78,8 @@ namespace Polimorfismo
                     //Escrever na tela a Etiqueta dos produtos conforme adicionados
                     Console.WriteLine(produto.Etiqueta());
                 }
+                //pular uma linha
+                Console.WriteLine();
             }
         }
     }
